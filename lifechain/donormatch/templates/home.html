@@ -8,7 +8,6 @@ jQuery(document).ready(function() {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
-    console.log(LifechainContext);
     if (LifechainContext.loggedin && window.location.hash.indexOf("#loggedin") != -1) {
         jQuery("#personal").show();
     } else {
@@ -278,15 +277,15 @@ $(document).onloaded(function(){
             <table>
               <tr>
               	<td width=140>First Name:</td>
-                <td><input type="text" name="firstName" value=""/></td>
+                <td><input type="text" name="firstName" value="{{user.first_name}}"/></td>
               </tr>
               <tr>
                 <td width=140>Last Name:</td>
-                <td><input type="text" name="lastName" value=""/></td>
+                <td><input type="text" name="lastName" value="{{user.last_name}}"/></td>
               </tr>
               <tr>
                 <td width=140>Age:</td>
-                <td><input type="text" name="age" /></td>
+                <td><input type="text" name="age" value="{{user.userprofile.age}}"/></td>
               </tr>
               <tr>
                 <td width =140>Location:</td>
@@ -302,11 +301,11 @@ $(document).onloaded(function(){
               </tr>
                   <tr>
                     <td width=140>Email Address:</td>
-                    <td><input type="email" name="email" /></td>
+                    <td><input type="email" name="email" value="{{user.email}}"/></td>
                   </tr>
                   <tr>
                     <td width=140>Phone Number:</td>
-                    <td><input type="tel"/></td>
+                    <td><input type="tel" value="{{user.userprofile.phone}}"/></td>
                   </tr>
                 </table>
                 </div>
