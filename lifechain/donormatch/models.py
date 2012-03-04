@@ -7,7 +7,7 @@ class UserProfile(models.Model):
         ('f', 'Female'),
         ('y', 'Yes, Please')
     )
-    user = models.ForeignKey(User)
+    user = models.OneToOneField(User)
     birthday = models.DateField()
     sex = models.CharField(max_length=1, choices = SEX_CHOICES)
     location = models.CharField(max_length=255, blank = True)
@@ -21,7 +21,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 class DonorProfile(models.Model):
-    user = models.ForeignKey(User)
+    user = models.OneToOneField(User)
     blood_type = models.CharField(max_length=2, blank = True)
     im1 = models.CharField(max_length=10, blank = True)
     im2 = models.CharField(max_length=10, blank = True)
@@ -44,8 +44,8 @@ class DonorProfile(models.Model):
         return self.user.username
 
 class UserLink(models.Model):
-    user_from = models.ForeignKey(User, related_name="user_from")
-    user_to = models.ForeignKey(User, related_name="user_to")
+    user_from = models.OneToOneField(User, related_name="user_from")
+    user_to = models.OneToOneField(User, related_name="user_to")
 
     def __unicode__(self):
         return "%s -> %s" % (self.user1.username, self.user2.username)
