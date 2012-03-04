@@ -3,7 +3,7 @@ from django.contrib import admin
 import tastypie.api
 import donormatch.api
 api = tastypie.api.Api(api_name='v1')
-api.register(donormatch.api.UserProfileResource())
+api.register(donormatch.api.UserResource())
 admin.autodiscover()
 
 urlpatterns = patterns('',
