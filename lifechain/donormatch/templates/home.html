@@ -8,7 +8,11 @@ jQuery(document).ready(function() {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
-    jQuery("#home").show();
+    if (window.location.hash == "loggedin") {
+        jQuery("#home").show();
+    } else {
+        jQuery("#personal").show();
+    }
 });
 </script>
 	<span id="background"></span>
@@ -24,6 +28,7 @@ jQuery(document).ready(function() {
 				<li><a class="menulink" data-href="#personal">PERSONAL</a></li>
 				<li><a class="menulink" data-href="#medical">MEDICAL INFO</a></li>
 				<li><a class="menulink" data-href="#general">GENERAL</a></li>
+				<li><a class="menulink" href="/logout">LOGOUT</a></li>
 			  {% endif %}
 			</ul> <!-- /#navigation -->
 			<ul id="connect">
@@ -125,8 +130,16 @@ jQuery(document).ready(function() {
 		  </div> <!-- about -->
 		  
         	<div id="personal" class="tabcontent" style="margin-left:1em">
-            &nbsp;
+
             <h3>Personal Information</h3>
+	    
+		  <p>Thanks for linking with facebook! We have already
+		  begun to identify which people in your friends or
+		  networks you can help. Please fill out the
+		  information in the personal, medical, and general
+		  tabs in order for us to better find matches for
+		  you!</p>
+		  
             <div id="contentOfPersonal" style="margin-left:2em">
             <form>
             <table>

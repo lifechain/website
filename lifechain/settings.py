@@ -150,7 +150,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 LOGIN_URL          = '/login-form/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/#loggedin'
 LOGIN_ERROR_URL    = '/login-error/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
