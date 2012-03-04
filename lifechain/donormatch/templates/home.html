@@ -8,7 +8,6 @@ jQuery(document).ready(function() {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
-    console.log(LifechainContext);
     if (LifechainContext.loggedin && window.location.hash.indexOf("#loggedin") != -1) {
         jQuery("#personal").show();
     } else {
@@ -29,10 +28,15 @@ jQuery(document).ready(function() {
 	}
 });
 
-$(document).onloaded(function(){
+
+function updateResults(){
 	$(".bestMatches").hide();
-	$("#table1").fadeIn();
-});
+    var elements = [1,2,3,4,5,6,7];
+    var idx = elements[Math.floor(Math.random() * elements.length)];
+	console.log("hi", $("#table" + idx).fadeIn());
+}
+$(document).ready(updateResults);
+$("input").change(updateResults);
 
 </script>
 	<span id="background"></span>
@@ -59,7 +63,8 @@ $(document).onloaded(function(){
 				<li><a href="" class="link-us"></a></li>
     -->
 			</ul> <!-- /#connect -->
-            <div class="bestMatches" id="table1"style="display:none">
+            <h3>Best Donor Matches</h3>
+            <div class="bestMatches" id="table1" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Jeffery Tenenbaum</td>
@@ -75,7 +80,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table2" style="display:none">
+            <div class="bestMatches" id="table2" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Bill Sharpe</td>
@@ -91,7 +96,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table3" style="display:none">
+            <div class="bestMatches" id="table3" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Vikram Iyer</td>
@@ -107,7 +112,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table4" style="display:none">
+            <div class="bestMatches" id="table4" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Ori Herschmann</td>
@@ -123,7 +128,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table5" style="display:none">
+            <div class="bestMatches" id="table5" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Aaron Moskovitz</td>
@@ -139,7 +144,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table6" style="display:none">
+            <div class="bestMatches" id="table6" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Aaron Moskovitz</td>
@@ -155,7 +160,7 @@ $(document).onloaded(function(){
                     </tr>
                 </table>
             </div>
-            <div class="bestMatches" id"table7" style="display:none">
+            <div class="bestMatches" id="table7" style="display:none">
             	<table>
                 	<tr>
                     	<td width = 50>Yvonne Tolstoy</td>
