@@ -26,6 +26,18 @@ jQuery(document).ready(function() {
 
 		this.attr("data-text", "Visit Lifechain to help my friends get the organs that they need");
 	}
+
+    jQuery(".facebook_button").click(function(btn) {
+        var text = $(btn).attr("data-text");
+        FB.api('/me/feed', 'post', { message: text }, function(response) {
+            if (!response || response.error) {
+                //alert('Error occured');
+            } else {
+                alert('Message posted to your wall');
+            }
+        });
+    });
+
 });
 
 
@@ -39,6 +51,34 @@ $(document).ready(updateResults);
 $("input").change(updateResults);
 
 </script>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '381209045225340', // App ID
+      //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+<script>
+</script>
+
 	<span id="background"></span>
 	<div id="page">
 		<div id="sidebar">
@@ -496,7 +536,7 @@ $("input").change(updateResults);
                         <td><input type="checkbox" name="cancer" /></td>
                         <td>You don't want a cancer transplant!</td>
                     </tr>
-                    <input type="button" class="facebook_button" data-text="this is the text that will be prefilled" onclick="sendMessage()"/>
+                    <input type="button" class="facebook_button" value="Ask my friends to help save lives" data-text="this is the text that will be prefilled"/>
                 </table>
                 </div>
     		</div><!-- #medical -->
