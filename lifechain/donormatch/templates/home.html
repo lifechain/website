@@ -18,9 +18,13 @@ jQuery(document).ready(function() {
 		    <a data-href="#home"><img src="http://i.imgur.com/cuHJ1.png"/></a>
 			</div> <!-- /#logo -->
 			<ul id="navigation">
+				<li><a class="menulink" data-href="#home">HOME</a></li>
+				<li><a class="menulink" data-href="#about">TRANSPLANT CHAIN</a></li>
+			  {% if user.is_authenticated %}
 				<li><a class="menulink" data-href="#personal">PERSONAL</a></li>
 				<li><a class="menulink" data-href="#medical">MEDICAL INFO</a></li>
 				<li><a class="menulink" data-href="#general">GENERAL</a></li>
+			  {% endif %}
 			</ul> <!-- /#navigation -->
 			<ul id="connect">
 				<li><a href="http://facebook.com" target="_blank" class="facebook"></a></li>
@@ -79,6 +83,46 @@ jQuery(document).ready(function() {
 		      <img src="/static/people3.jpg" height="200px"/>
 		    </p>
 		  </div> <!-- home -->
+		  
+		  <div id="about" class="tabcontent" style="margin-left:1em">
+		    
+		    <h1>What is a transplant chain?</h1>
+		    
+		    <p>Imagine your son or daughter needs a lifesaving
+		      organ transplant. Often times, you will not be
+		      able to donate an organ to them because of blood
+		      type, age, or immunological marker mismatch. Now
+		      consider that there are thousands of families in
+		      similar situations, unable to save their child
+		      because of these uncontrollable factors.</p>
+		    
+		    <p>The transplant chain can solve this
+		      problem. Even if you can.t donate an organ to
+		      your child, you could be paired with another
+		      person in a similar situation, whose child you
+		      can save, because you happen to match
+		      immunologically. They in exchange will donate an
+		      organ to help yours!</p>
+		    
+		    <p>This type of exchange can save more than two
+		      lives--it has touched as many as 60, as
+		      documented in this recent
+		      [<a href="http://www.nytimes.com/2012/02/19/health/lives-forever-linked-through-kidney-transplant-chain-124.html">New
+		      York Times article</a>]. The Lifechain project
+		      is dedicated to helping people to connect in
+		      order to facilitate this type of amazing
+		      life-saving event.</p>
+
+		    {% if user.is_authenticated %}
+		    <p><a href="#profile">Go to Profile</a></p>
+		    <p><a href="/logout">Logout</a></p>
+		    {% else %}
+		    <p>
+		      <a href="{% url socialauth_begin 'facebook' %}">
+			<img src="/static/fblogin.png" alt="Login using Facebook"/></a></p>
+		    {% endif %}
+		    
+		  </div> <!-- about -->
 		  
         	<div id="personal" class="tabcontent" style="margin-left:1em">
             &nbsp;
