@@ -67,9 +67,9 @@ jQuery(document).ready(function() {
 		    <p><a href="#profile">Go to Profile</a></p>
 		    <p><a href="/logout">Logout</a></p>
 		    {% else %}
-		    <p><a href="{% url socialauth_begin 'facebook'
-				%}"><img src="/static/fblogin.png"
-					 alt="Login using Facebook"/></a></p>
+		    <p>
+		      <a href="{% url socialauth_begin 'facebook' %}">
+			<img src="/static/fblogin.png" alt="Login using Facebook"/></a></p>
 		    {% endif %}
 		    
 		    <h3>The lives you could help save</h3>
