@@ -15,6 +15,7 @@ class UserProfile(models.Model):
     longitude = models.IntegerField(blank = True)
     phone = models.CharField(max_length=15, blank = True)
     created_at = models.DateTimeField(auto_now_add=True)
+    facebook_friends = models.TextField(blank = True, default = '{}')
     updated_at = models.DateTimeField(auto_now_add=True, auto_now=True)
 
     def __unicode__(self):
