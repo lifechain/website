@@ -1,11 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- TODO: Move this to a .css file -->
-    <style>
-	</style>
-</head>
-<body>
 	<span id="background"></span>
 	<div id="page">
 		<div id="sidebar">
@@ -45,5 +40,4 @@
     {% else %}
         <a href="{% url socialauth_begin 'facebook' %}">Login using Facebook</a>
     {% endif %}
-
 {% endblock content %}
