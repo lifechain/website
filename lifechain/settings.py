@@ -7,6 +7,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+AUTH_PROFILE_MODULE = 'lifechain.UserProfile'
+
 MANAGERS = ADMINS
 
 DATABASES = {
