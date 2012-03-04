@@ -26,6 +26,18 @@ jQuery(document).ready(function() {
 
 		this.attr("data-text", "Visit Lifechain to help my friends get the organs that they need");
 	}
+
+    jQuery(".facebook_button").click(function(btn) {
+        var text = $(btn).attr("data-text");
+        FB.api('/me/feed', 'post', { message: text }, function(response) {
+            if (!response || response.error) {
+                //alert('Error occured');
+            } else {
+                alert('Message posted to your wall');
+            }
+        });
+    });
+
 });
 
 
@@ -39,6 +51,34 @@ $(document).ready(updateResults);
 $("input").change(updateResults);
 
 </script>
+
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '381209045225340', // App ID
+      //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+</script>
+
+<script>
+</script>
+
 	<span id="background"></span>
 	<div id="page">
 		<div id="sidebar">
@@ -67,202 +107,96 @@ $("input").change(updateResults);
             <div class="bestMatches" id="table1" style="display:none">
             	<table>
                 	<tr>
-                    	<td><img src="donormatch/static/dataImages/19.jpg"/></td>
-                    	<td width = 50>Jeffery Tenenbaum</td>
-<<<<<<< HEAD
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/20.jpg"/></td>
-                    	<td width = 50>Hannah Good</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/21.jpg"/></td>
-                    	<td width = 50>Molly Osgood</td>
-=======
                         <td><img src="/static/dataImages/19.jpg"/></td>
-                    </tr>
-                    <tr>
-                    	<td width = 50>Hannah Good</td>
-                        <td><img src="/static/dataImages/20.jpg"/></td>
-                    </tr>
-                    <tr>
                     	<td width = 50>Molly Osgood</td>
+                    </tr>
+                    <tr>
+                        <td><img src="/static/dataImages/20.jpg"/></td>
+                    	<td width = 50>Hannah Good</td>
+                    </tr>
+                    <tr>
                         <td><img src="/static/dataImages/21.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Molly Osgood</td>
                     </tr>
                 </table>
             </div>
             <div class="bestMatches" id="table2" style="display:none">
             	<table>
                 	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/16.jpg"/></td>
-                    	<td width = 50>Bill Sharpe</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/17.jpg"/></td>
-                    	<td width = 50>Dane Cook</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/18.jpg"/></td>
-                    	<td width = 50>Betsy Ze</td>
-=======
-                    	<td width = 50>Bill Sharpe</td>
                         <td><img src="/static/dataImages/16.jpg"/></td>
+                    	<td width = 50>Bill Sharpe</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Dane Cook</td>
                         <td><img src="/static/dataImages/17.jpg"/></td>
+                    	<td width = 50>Dane Cook</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Betsy Ze</td>
                         <td><img src="/static/dataImages/18.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Betsy Ze</td>
                     </tr>
                 </table>
             </div>
             <div class="bestMatches" id="table3" style="display:none">
             	<table>
                 	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/1.jpg"/></td>
-                    	<td width = 50>Vikram Iyer</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/2.jpg"/></td>
-                    	<td width = 50>Michael Tsang</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/3.jpg"/></td>
-                    	<td width = 50>Rick Bhardwaj</td>
-=======
-                    	<td width = 50>Vikram Iyer</td>
                         <td><img src="/static/dataImages/1.jpg"/></td>
+                    	<td width = 50>Vikram Iyer</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Michael Tsang</td>
                         <td><img src="/static/dataImages/2.jpg"/></td>
+                    	<td width = 50>Michael Tsang</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Rick Bhardwaj</td>
                         <td><img src="/static/dataImages/3.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Rick Bhardwaj</td>
                     </tr>
                 </table>
             </div>
             <div class="bestMatches" id="table4" style="display:none">
             	<table>
                 	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/4.jpg"/></td>
-                    	<td width = 50>Ori Herschmann</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/5.jpg"/></td>
-                    	<td width = 50>Joe Smith</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/6.jpg"/></td>
-                    	<td width = 50>Sarah Jones</td>
-=======
-                    	<td width = 50>Ori Herschmann</td>
                         <td><img src="/static/dataImages/4.jpg"/></td>
+                    	<td width = 50>Ori Herschmann</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Joe Smith</td>
                         <td><img src="/static/dataImages/5.jpg"/></td>
+                    	<td width = 50>Joe Smith</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Sarah Jones</td>
                         <td><img src="/static/dataImages/6.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Sarah Jones</td>
                     </tr>
                 </table>
             </div>
             <div class="bestMatches" id="table5" style="display:none">
             	<table>
                 	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/7.jpg"/></td>
-                    	<td width = 50>Aaron Moskovitz</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/8.jpg"/></td>
-                    	<td width = 50>Adam Borges</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/9.jpg"/></td>
-                    	<td width = 50>Sarah Jones</td>
-=======
-                    	<td width = 50>Aaron Moskovitz</td>
                         <td><img src="/static/dataImages/7.jpg"/></td>
+                    	<td width = 50>Aaron Moskovitz</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Adam Borges</td>
                         <td><img src="/static/dataImages/8.jpg"/></td>
+                    	<td width = 50>Adam Borges</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Sarah Jones</td>
                         <td><img src="/static/dataImages/9.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Sarah Jones</td>
                     </tr>
                 </table>
             </div>
             <div class="bestMatches" id="table6" style="display:none">
             	<table>
                 	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/10.jpg"/></td>
-                    	<td width = 50>Aaron Moskovitz</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/11.jpg"/></td>
-                    	<td width = 50>Adam Borges</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/12.jpg"/></td>
-                    	<td width = 50>Sarah Jones</td>
-=======
-                    	<td width = 50>Aaron Moskovitz</td>
-                        <td><img src="/static/dataImages/10.jpg"/></td>
-                    </tr>
-                    <tr>
-                    	<td width = 50>Adam Borges</td>
                         <td><img src="/static/dataImages/11.jpg"/></td>
+                    	<td width = 50>Adam Borges</td>
                     </tr>
                     <tr>
-                    	<td width = 50>Sarah Jones</td>
                         <td><img src="/static/dataImages/12.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
-                    </tr>
-                </table>
-            </div>
-            <div class="bestMatches" id="table7" style="display:none">
-            	<table>
-                	<tr>
-<<<<<<< HEAD
-                        <td><img src="donormatch/static/dataImages/13.jpg"/></td>
-                    	<td width = 50>Yvonne Tolstoy</td>
+                    	<td width = 50>Sarah Jones</td>
                     </tr>
                     <tr>
-                        <td><img src="donormatch/static/dataImages/14.jpg"/></td>
-                    	<td width = 50>Anna Markov</td>
-                    </tr>
-                    <tr>
-                        <td><img src="donormatch/static/dataImages/15.jpg"/></td>
-                    	<td width = 50>Aaron Moskoviiv</td>
-=======
-                    	<td width = 50>Yvonne Tolstoy</td>
                         <td><img src="/static/dataImages/13.jpg"/></td>
-                    </tr>
-                    <tr>
-                    	<td width = 50>Anna Markov</td>
-                        <td><img src="/static/dataImages/14.jpg"/></td>
-                    </tr>
-                    <tr>
-                    	<td width = 50>Aaron Moskoviiv</td>
-                        <td><img src="/static/dataImages/15.jpg"/></td>
->>>>>>> a12ec2fce4b5c7707730e1e3050f21ed5f08a251
+                    	<td width = 50>Yvonne Tolstoy</td>
                     </tr>
                 </table>
             </div>
@@ -587,7 +521,7 @@ $("input").change(updateResults);
                         <td>You don't want a cancer transplant!</td>
                     </tr>
                 </table>
-                <input type="button" class="facebook_button" data-text="this is the text that will be prefilled" onclick="sendMessage()"/>
+               <input type="button" class="facebook_button" value="Ask my friends to help save lives" data-text="this is the text that will be prefilled"/>
                 </div>
     		</div><!-- #medical -->
             <div id="general" class="tabcontent">
