@@ -55,6 +55,7 @@
 			margin: 0 0 60px;
 		}
 		#logo a {
+		    /*
 			background: url(../images/logo.jpg) no-repeat right top;
 			color: #be1010;
 			display: block;
@@ -62,6 +63,7 @@
 			width: 209px;
 			padding: 159px 25px 0;
 			text-align: center;
+			*/
 		}
 		#logo a em {
 			font-size: 16px;

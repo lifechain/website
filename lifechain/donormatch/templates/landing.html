@@ -21,7 +21,12 @@ matches and form chains between you and your friends. If a match is
 made, you will be informed--and if you are willing, you might be able
 to change someone's life forever.
 
-<p>FACEBOOK LOGIN BUTTON or GO TO PROFILE LINK</p>
+{% if user.is_authenticated %}
+  <p><a href="#profile">Go to Profile</a>
+  <p><a href="/logout">Logout</a>
+{% else %}
+  <p><a href="{% url socialauth_begin 'facebook' %}"><img src="/static/fblogin.png" alt="Login using Facebook"/></a>
+{% endif %}
 
 <h3>The lives you could help save</h3>
 <p>

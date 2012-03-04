@@ -4,10 +4,16 @@
 <script>
 jQuery(document).ready(function() {
     jQuery(".tabcontent").hide();
-    jQuery("#navigation a").click(function(el) {
+    jQuery("#logo a, #navigation a").click(function(el) {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
+    console.log(LifechainContext);
+    if (LifechainContext.loggedin && window.location.hash.indexOf("#loggedin") != -1) {
+        jQuery("#personal").show();
+    } else {
+        jQuery("#home").show();
+    }
 });
 
 $(document).onloaded(function(){
@@ -20,12 +26,17 @@ $(document).onloaded(function(){
 	<div id="page">
 		<div id="sidebar">
 		  <div id="logo">
-				<img src="http://i.imgur.com/cuHJ1.png"/>
+		    <a data-href="#home"><img src="http://i.imgur.com/cuHJ1.png"/></a>
 			</div> <!-- /#logo -->
 			<ul id="navigation">
+				<li><a class="menulink" data-href="#home">HOME</a></li>
+				<li><a class="menulink" data-href="#about">TRANSPLANT CHAIN</a></li>
+			  {% if user.is_authenticated %}
 				<li><a class="menulink" data-href="#personal">PERSONAL</a></li>
 				<li><a class="menulink" data-href="#medical">MEDICAL INFO</a></li>
 				<li><a class="menulink" data-href="#general">GENERAL</a></li>
+				<li><a class="menulink" href="/logout">LOGOUT</a></li>
+			  {% endif %}
 			</ul> <!-- /#navigation -->
 			<ul id="connect">
 				<li><a href="http://facebook.com" target="_blank" class="facebook"></a></li>
@@ -152,9 +163,102 @@ $(document).onloaded(function(){
 		</div> <!-- /#sidebar -->
 
 		<div class="theContents" id="contents">
+
+		  <div id="home" class="tabcontent" style="margin-left:1em">
+		    
+		    <h1>Lifechain - Connecting Lives</h1>
+		    <p>18 people die every day in the U.S. waiting for
+		      a lifesaving organ transplant
+		      [<a href="http://www.gsds.org/facts_about_donation/the_basic_facts.aspx">source</a>].
+		      This is a type of disease that is curable by
+		      proven surgical techniques.  And yet those
+		      waiting for just one type of organ transplant
+		      consume over 10 percent of the entire medicare
+		      budget
+		      [<a href="http://www.examiner.com/healthcare-industry-in-national/kidney-transplant-success-dr-joseph-murray-pioneered-55-years-ago">source</a>].</p>
+		    
+		    <p>The Lifechain project is the world's first
+		      open-source, not-for-profit, transplant-chain
+		      service. The Lifechain website uses social
+		      networks to connect people in order to save
+		      lives. Sign up to see how you and your friends
+		      can change lives.</p>
+		    
+		    <p>Lifechain will ask you for medical data that
+		      can be used to find matches and form chains
+		      between you and your friends. If a match is
+		      made, you will be informed--and if you are
+		      willing, you might be able to change someone's
+		      life forever.</p>
+		    
+		    {% if user.is_authenticated %}
+		    <p><a href="#profile">Go to Profile</a></p>
+		    <p><a href="/logout">Logout</a></p>
+		    {% else %}
+		    <p>
+		      <a href="{% url socialauth_begin 'facebook' %}">
+			<img src="/static/fblogin.png" alt="Login using Facebook"/></a></p>
+		    {% endif %}
+		    
+		    <h3>The lives you could help save</h3>
+		    <p>
+		      <img src="/static/people1.jpg" height="200px"/>
+		      <img src="/static/people2.jpg" height="200px"/>
+		      <img src="/static/people3.jpg" height="200px"/>
+		    </p>
+		  </div> <!-- home -->
+		  
+		  <div id="about" class="tabcontent" style="margin-left:1em">
+		    
+		    <h1>What is a transplant chain?</h1>
+		    
+		    <p>Imagine your son or daughter needs a lifesaving
+		      organ transplant. Often times, you will not be
+		      able to donate an organ to them because of blood
+		      type, age, or immunological marker mismatch. Now
+		      consider that there are thousands of families in
+		      similar situations, unable to save their child
+		      because of these uncontrollable factors.</p>
+		    
+		    <p>The transplant chain can solve this
+		      problem. Even if you can.t donate an organ to
+		      your child, you could be paired with another
+		      person in a similar situation, whose child you
+		      can save, because you happen to match
+		      immunologically. They in exchange will donate an
+		      organ to help yours!</p>
+		    
+		    <p>This type of exchange can save more than two
+		      lives--it has touched as many as 60, as
+		      documented in this recent
+		      [<a href="http://www.nytimes.com/2012/02/19/health/lives-forever-linked-through-kidney-transplant-chain-124.html">New
+		      York Times article</a>]. The Lifechain project
+		      is dedicated to helping people to connect in
+		      order to facilitate this type of amazing
+		      life-saving event.</p>
+
+		    {% if user.is_authenticated %}
+		    <p><a href="#profile">Go to Profile</a></p>
+		    <p><a href="/logout">Logout</a></p>
+		    {% else %}
+		    <p>
+		      <a href="{% url socialauth_begin 'facebook' %}">
+			<img src="/static/fblogin.png" alt="Login using Facebook"/></a></p>
+		    {% endif %}
+		    
+		  </div> <!-- about -->
+		  
         	<div id="personal" class="tabcontent" style="margin-left:1em">
-            &nbsp;
+
             <h3>Personal Information</h3>
+	    
+		  <p>Thanks for linking with facebook! We have already
+		  begun to identify which people in your friends or
+		  networks you can help. Please fill out the
+		  information in the personal, medical, and general
+		  tabs in order for us to better find matches for
+		  you!</p>
+		  
             <div id="contentOfPersonal" style="margin-left:2em">
             <form>
             <table>
