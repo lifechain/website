@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Hello, world
+    {% if user.is_authenticated %}
+        You are logged in as {{user.username}}! <a href="/logout">Logout</a>
+    {% else %}
+        <a href="{% url socialauth_begin 'facebook' %}">Login using Facebook</a>
+    {% endif %}
+
 {% endblock content %}
