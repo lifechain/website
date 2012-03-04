@@ -4,7 +4,7 @@
 <script>
 jQuery(document).ready(function() {
     jQuery(".tabcontent").hide();
-    jQuery("#navigation a").click(function(el) {
+    jQuery("#logo a, #navigation a").click(function(el) {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 	<div id="page">
 		<div id="sidebar">
 		  <div id="logo">
-				<img src="http://i.imgur.com/cuHJ1.png"/>
+		    <a data-href="#home"><img src="http://i.imgur.com/cuHJ1.png"/></a>
 			</div> <!-- /#logo -->
 			<ul id="navigation">
 				<li><a class="menulink" data-href="#personal">PERSONAL</a></li>
