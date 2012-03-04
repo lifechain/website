@@ -8,10 +8,11 @@ jQuery(document).ready(function() {
         jQuery(".tabcontent").hide();
         jQuery(jQuery(this).attr("data-href")).fadeIn();
     });
-    if (window.location.hash == "loggedin") {
-        jQuery("#home").show();
-    } else {
+    console.log(LifechainContext);
+    if (LifechainContext.loggedin && window.location.hash.indexOf("#loggedin") != -1) {
         jQuery("#personal").show();
+    } else {
+        jQuery("#home").show();
     }
 });
 </script>
