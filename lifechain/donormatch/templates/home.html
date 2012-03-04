@@ -45,10 +45,12 @@ function updateResults(){
 	$(".bestMatches").hide();
     var elements = [1,2,3,4,5,6,7];
     var idx = elements[Math.floor(Math.random() * elements.length)];
-	console.log("hi", $("#table" + idx).fadeIn());
+	$("#table" + idx).fadeIn();
 }
-$(document).ready(updateResults);
-$("input").change(updateResults);
+$(document).ready(function() {
+    $("input").change(updateResults);
+	$("#table1").fadeIn();
+});
 
 </script>
 
