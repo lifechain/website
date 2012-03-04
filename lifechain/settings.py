@@ -119,7 +119,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'donormatch',
-    'social_auth'
+    'social_auth',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'tastypie',
