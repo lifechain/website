@@ -158,6 +158,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'social_auth.context_processors.social_auth_by_name_backends',
     'social_auth.context_processors.social_auth_backends',
     'social_auth.context_processors.social_auth_by_type_backends',
+    'context_processors.lifechain_context',
 )
 
 # A sample logging configuration. The only tangible logging

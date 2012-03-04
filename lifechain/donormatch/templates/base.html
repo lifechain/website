@@ -5,6 +5,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 <title>{% block page_title %}Lifechain{% endblock page_title %}</title>
 <link rel="shortcut icon" href="/static/favicon.ico" />
+<script>
+var LifechainContext = {{lifechain_context|safe}};
+</script>
 </head>
 <body>
 {% block content%}{%endblock content %}
