@@ -77,7 +77,7 @@
 			text-transform: uppercase;
 		}
 		#navigation li.selected a, #navigation li a:hover {
-			background: url(../images/dot.png) no-repeat 190px center;
+			background: url(/static/dot.png) no-repeat 190px center;
 		}
 
 		#connect {
