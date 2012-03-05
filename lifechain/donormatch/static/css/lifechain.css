@@ -56,7 +56,10 @@
 
 		#logo {
 			line-height: 20px;
-			margin: 0 0 60px;
+            margin-bottom: 60px;
+            margin-left: -27px;
+            margin-right: 0;
+            margin-top: 15px;
 		}
 		#logo a {
 		    /*
@@ -123,7 +126,8 @@
 			min-height: 1380px;
 			width: 690px;
 			margin: 0 0 0 264px;
-			padding-top: 60px;
+			padding-top: 7px;
+			padding-left: 15px;
 		}
 		#contents span.header {
 			background-position: 0 -224px;
@@ -137,9 +141,12 @@
 			color: #ebebeb;
 			font-weight: normal;
 			height: 27px;
-			width: 496px;
-			margin: 0 auto;
-			padding: 18px 8px 15px;
+			width: 585px;
+			margin-left: 42px;
+            padding-bottom: 15px;
+            padding-left: 25px;
+            padding-right: 8px;
+            padding-top: 18px;
 			text-transform: uppercase;
 		}
 		#contents div {
