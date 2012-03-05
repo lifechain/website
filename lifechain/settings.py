@@ -128,7 +128,7 @@ INSTALLED_APPS = (
 # Django social auth. https://github.com/omab/django-social-auth
 FACEBOOK_APP_ID              = '381209045225340'
 FACEBOOK_API_SECRET          = '03344be809dcc191ce2c3ccd701db345'
-FACEBOOK_EXTENDED_PERMISSIONS = ['user_birthday', 'user_location', 'email' ]
+FACEBOOK_EXTENDED_PERMISSIONS = ['user_birthday', 'user_location', 'email', 'publish_stream' ]
 AUTHENTICATION_BACKENDS = (
 #   'social_auth.backends.twitter.TwitterBackend',
     'social_auth.backends.facebook.FacebookBackend',

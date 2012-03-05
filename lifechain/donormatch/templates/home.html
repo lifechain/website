@@ -15,10 +15,10 @@ jQuery(document).ready(function() {
     }
 
 	function getMessageText() {
-        var text = "Visit Lifechain to help my friends get the organs that they need";
+        var text = "Visit Lifechain to help my friends get the organs that they need: http://www.lifechain.info";
 		jQuery(".checkboxclass").each(function(elem, index) {
   			if(jQuery(elem).attr("checked")) {
-				text = "Visit Lifechain to help me get the organ that I need!";
+				text = "Visit Lifechain to help me get the organ that I need: http://www.lifechain.info!";
 			}
 		});
 
@@ -45,7 +45,7 @@ function updateResults(){
 	$("#table" + idx).fadeIn();
 }
 $(document).ready(function() {
-    $("input").change(updateResults);
+    $("input, select").change(updateResults);
 	$("#table1").fadeIn();
 });
 
