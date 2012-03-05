@@ -238,12 +238,18 @@ $(document).ready(function() {
 		    {% endif %}
 
 		    <h3>The lives you could help save</h3>
-		    <p>
-		      <img src="/static/people1.jpg" height="300px"width="389px"/>
-		      <img src="/static/people2.jpg" height="300px"width="389px"/>
-		      <img src="/static/people3.jpg" height="300px" width="389px"/>
-              <img src="/static/people4.jpg" height="300px" width="389px"/>
-		    </p>
+            <style type="text/css">
+            .profile_images img {
+                padding-right: 10px;
+                margin-left: 3em;
+            }
+            </style>
+		    <div class="profile_images">
+		      <img src="/static/people1.jpg" height="225">
+		      <img src="/static/people2.jpg" height="225">
+		      <img src="/static/people3.jpg" height="225">
+              <img src="/static/people4.jpg" height="225">
+		    </div>
 		  </div> <!-- home -->
 
 		  <div id="about" class="tabcontent" style="margin-left:1em">
