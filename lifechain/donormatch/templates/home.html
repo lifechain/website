@@ -14,25 +14,22 @@ jQuery(document).ready(function() {
         jQuery("#home").show();
     }
 
-	function sendMessage()
-	{
+	function getMessageText() {
+        var text = "Visit Lifechain to help my friends get the organs that they need: http://www.lifechain.info";
 		jQuery(".checkboxclass").each(function(elem, index) {
-  			if(jQuery(elem).attr("checked"))
-			{
-				this.attr("data-text", "Visit Lifechain to help me get the organ that I need!");
-				return;
+  			if(jQuery(elem).attr("checked")) {
+				text = "Visit Lifechain to help me get the organ that I need: http://www.lifechain.info!";
 			}
 		});
 
-		this.attr("data-text", "Visit Lifechain to help my friends get the organs that they need");
+        return text;
 	}
 
     jQuery(".facebook_button").click(function(btn) {
-        var text = $(btn).attr("data-text");
+        var text = getMessageText();
+        window.console && console.log("clicked", text);
         FB.api('/me/feed', 'post', { message: text }, function(response) {
             if (!response || response.error) {
-                //alert('Error occured');
-            } else {
                 alert('Message posted to your wall');
             }
         });
@@ -48,7 +45,7 @@ function updateResults(){
 	$("#table" + idx).fadeIn();
 }
 $(document).ready(function() {
-    $("input").change(updateResults);
+    $("input, select").change(updateResults);
 	$("#table1").fadeIn();
 });
 
@@ -98,13 +95,9 @@ $(document).ready(function() {
 			  {% endif %}
 				<li><a class="menulink" data-href="#contact">CONTACT</a></li>
 			</ul> <!-- /#navigation -->
-			<ul id="connect">
-				<li><a href="http://facebook.com" target="_blank" class="facebook"></a></li>
-    <!--
-				<li><a href="http://twitter.com" target="_blank" class="twitter"></a></li>
-				<li><a href="" class="link-us"></a></li>
-    -->
-			</ul> <!-- /#connect -->
+            <div>
+                <input class="facebook_button" type="button" value="Ask my friends on Facebook to save lives"/>
+            </div>
             <h3>Best Donor Matches</h3>
             <div class="bestMatches" id="table1" style="display:none">
             	<table>
