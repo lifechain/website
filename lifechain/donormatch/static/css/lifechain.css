@@ -32,8 +32,13 @@
 			background: url(../images/icons.gif) no-repeat;
 		}
 		#contents span.header, #contents h3, #contents ul li, #contents div.blogs span {
-			background: url(../images/interface.gif) no-repeat;
+		  background: url(../images/interface.gif) no-repeat;
 		}
+        #contents h3.special{ color: #000000 !important;
+font-size: 25px;
+text-shadow: 0 1px 0 white;
+margin-top: -20px;
+margin-bottom: 10px; }
 
 		/** Links **/
 		#sidebar {

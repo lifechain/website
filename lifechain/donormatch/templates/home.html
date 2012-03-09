@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
 
 function updateResults(){
 	$(".bestMatches").hide();
-    var elements = [1,2,3,4,5,6,7];
+    var elements = [1,2,3,4,5,6];
     var idx = elements[Math.floor(Math.random() * elements.length)];
 	$("#table" + idx).fadeIn();
 }
@@ -110,7 +110,7 @@ $(document).ready(function() {
                     </tr>
                     <tr>
                         <td><img src="/static/dataImages/21.jpg"/></td>
-                    	<td width = 50>Molly Osgood</td>
+                    	<td width = 50>Derek Brans</td>
                     </tr>
                 </table>
             </div>
@@ -204,6 +204,7 @@ $(document).ready(function() {
 		  <div id="home" class="tabcontent" style="margin-left:1em">
 
 		    <h1>Connecting Lives</h1>
+<iframe width="560" height="315" src="http://www.youtube.com/embed/Ejo_XqZce_I" frameborder="0" allowfullscreen></iframe>
 		    <p>18 people die every day in the U.S. waiting for
 		      a lifesaving organ transplant
 		      [<a href="http://www.gsds.org/facts_about_donation/the_basic_facts.aspx">source</a>].
@@ -237,18 +238,19 @@ $(document).ready(function() {
 			<img src="/static/fblogin.png" alt="Login using Facebook"/></a></p>
 		    {% endif %}
 
-		    <h3>The lives you could help save</h3>
+		    <h3 class="special" style="background-image: none">The lives you could help save</h3>
             <style type="text/css">
             .profile_images img {
                 padding-right: 10px;
                 margin-left: 3em;
+                height: 55px;
             }
             </style>
 		    <div class="profile_images">
-		      <img src="/static/people1.jpg" height="225">
-		      <img src="/static/people2.jpg" height="225">
-		      <img src="/static/people3.jpg" height="225">
-              <img src="/static/people4.jpg" height="225">
+		      <img src="http://i11.photobucket.com/albums/a154/mamassage/buppcolorenhancedeyessquare.jpg">
+		      <img src="http://media.philly.com/images/600*450/20100714_inq_he1donate14-a.JPG">
+		      <img src="http://triblocal.com/elgin/files/2012/01/greg-white-hospital.jpg">
+              <img src="http://abcnews.go.com/images/Health/ht_amit_gupta_thg_111122_wblog.jpg">
 		    </div>
 		  </div> <!-- home -->
 
@@ -342,7 +344,9 @@ $(document).ready(function() {
                 </div>
                 </form>
     		</div><!-- /#contact -->
-
+<style>
+    #contentOfMedical select{ margin-right: 10px;  }
+</style>
             <div id="medical" class="tabcontent">
                 <h3>Medical Information</h3>
                 <div id="contentOfMedical" style="margin-left:4em">
@@ -356,7 +360,7 @@ $(document).ready(function() {
                     Positive: <input type='checkbox' name="bloodPos?"/>
                 </form>
                 <h4>Immunological Markers</h4>
-                <form>
+                <form style="float: left;">
                 	IgA: <select name="immunoDropDown">
                     	 <option value="a">A</option>
                          <option value="b">B</option>
@@ -490,8 +494,12 @@ $(document).ready(function() {
                          <option value="t">T</option>
                          </select>
                 </form>
-                <a title="Don't know this? Ask your doctor for a Major Histocompatability Complex Test(MHC Test)."><img src="http://i.imgur.com/5FlSg.png"/></a>
-                <table>
+                <a style="float: left" title="Don't know this? Ask your doctor for a Major Histocompatability Complex Test(MHC Test)."><img src="http://i.imgur.com/5FlSg.png"/></a>
+                <table style="background-color: #CCC;
+border-radius: 5px;
+padding: 0 10px 10px 10px;
+margin-top: 20px;
+float: left;">
                 	<tr>
                     	<td></td>
                     	<td width=170><h4>Do you have a medical history with any of the following?</h4></td>
